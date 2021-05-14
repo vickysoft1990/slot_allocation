@@ -1,14 +1,11 @@
 <?php
-
+ini_set('memory_limit', '512M');// to increase the memory to process large amount of data
+ini_set('max_execution_time', 300);// five min max execution time
 session_start();
 include '../common/inc.common.php';
 $aca_year=$_SESSION['aca_year_id'];
-
-ini_set('memory_limit', '512M');// to increase the memory to process large amount of data
-ini_set('max_execution_time', 300);// five min max execution time
 function fillSlots($requiredSubjects, $availableSlots, $filledSlots =array()) {
-   // print_r("ss");
-	if (!$requiredSubjects) {
+   	if (!$requiredSubjects) {
 		ksort($filledSlots);
 		return $filledSlots;
 	}
